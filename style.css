@@ -1,0 +1,126 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+}
+
+body {
+    font-family:'Chivo', sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+#big-container::before {
+    pointer-events: none;
+    position: relative;
+    z-index: -10;
+
+}
+
+#big-container {
+    background-color:#99f1ff;
+    background-image:
+    radial-gradient(at 18% 81%, hsla(87,73%,71%,1) 0px, transparent 50%),
+    radial-gradient(at 36% 89%, hsla(349,73%,68%,1) 0px, transparent 50%),
+    radial-gradient(at 29% 22%, hsla(23,89%,69%,1) 0px, transparent 50%),
+    radial-gradient(at 66% 38%, hsla(351,71%,79%,1) 0px, transparent 50%),
+    radial-gradient(at 80% 40%, hsla(270,93%,60%,1) 0px, transparent 50%),
+    radial-gradient(at 28% 24%, hsla(308,68%,79%,1) 0px, transparent 50%),
+    radial-gradient(at 58% 91%, hsla(345,86%,70%,1) 0px, transparent 50%);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    width: 100vw;
+    padding: 100px;
+    gap: 30px;
+
+
+}
+
+#big-container > * {
+    position: relative;
+    z-index: 5;
+}
+
+.todo {
+    margin-bottom: 20px;
+}
+
+.todo-top {
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+    
+}
+
+.checked {
+    display: none;
+}
+
+#todo-header {
+    display: flex;
+    justify-content: start;
+    gap: 30px;
+    align-items: center;
+}
+
+.pretty-button {
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    box-sizing: border-box;
+    color: #0f1111;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 29px;
+    padding: 0 10px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    width: 100px;
+    transition: all .2s ease-in-out;
+}
+
+.pretty-button:hover {
+    transform: scale(1.1);
+}
+
+.add-div {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+#form-add {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-input-text {
+    text-align: center;
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.form-input-text:focus {
+    outline: 1px solid black;
+}

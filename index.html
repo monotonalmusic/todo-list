@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/grained@0.0.2/grained.min.js"></script>
+    <script defer src="script.js"></script>
+    <title>To do</title>
+</head>
+<body>
+    <div class="big-container" id="big-container">
+            <div id="todo-header">
+                <h1>To Do</h1>
+                
+            </div>
+            
+            <div class="add-div">
+                <form id="form-add">
+                    <input type="text" name="task" id="task-add" class="form-input-text" placeholder="task name" autocomplete="off">
+                    <input type="text" name="description" id="description-add" class="form-input-text" placeholder="description" autocomplete="off">
+                    <input type="datetime-local" name="due-date" id="duedate-add" class="form-input-text" placeholder="due date" autocomplete="off">
+                </form>
+                <button class="pretty-button" id="button-add">Add task</button>
+        
+            </div>
+            <div class="output"></div>
+    </div>
+   
+    <script>
+        let options = {
+            animate: true,
+            patternWidth: 100,
+            patternHeight: 100,
+            grainOpacity: 0.05,
+            grainDensity: 1,
+            grainWidth: 1,
+            grainHeight: 1
+        }
+
+        grained("#big-container", options);
+
+    </script>
+    
+    
+</body>
+</html>
