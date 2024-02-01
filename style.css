@@ -83,6 +83,22 @@ img {
 
 /*form*/
 
+.todo-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+
+}
+
+input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
 .add-div {
     display: flex;
     flex-flow: column;
@@ -124,4 +140,8 @@ input[type="date"]:before {
 
 .form-input-text:focus {
     outline: 1px solid black;
+}
+
+.todo-check {
+
 }

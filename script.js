@@ -5,12 +5,15 @@ let todoArray = [];
 function refreshPage() {
     output.innerHTML = '';
     todoArray.forEach((todo, index) => {
-        console.log(todo)
-        todo.id = index + 1 ;
+        console.log(`todo: ${todo.id}`);
+        console.log(`index: ${index}`);
+        todo.id = index + 1;
+        checkedItems();
+        console.log(`todo after: ${todo.id}`);
         output.innerHTML += `
             <div class="todo" id="todo${todo.id}">
                 <div class="todo-top">
-                    <h3>( ${todo.id} ) ${todo.title}</h3>
+                    <h3 id="top-header-${todo.id}">( ${todo.id} ) ${todo.title}</h3>
                     <input type="checkbox" name="todo" class="todo-check" id="check-${todo.id}"> 
                 </div>
                 <p>${todo.description}</p>
@@ -23,10 +26,19 @@ function refreshPage() {
 
 };
 
+function updateIndex() {
+    todoArray.forEach((todo, index) => {
+        let topHeader = document.getElementById(`top-header-${todo.id}`);
+        todo.id = index + 1;
+        console.log(todo.id);
+        console.log(todo.title)
+        topHeader.innerText = `( ${todo.id} ) ${todo.title}`;
+        
+    });
+
+}
 
 let buttonAdd = document.querySelector('#button-add');
-
-
 
 let checkedItems = () => {
     let checkBoxes = document.querySelectorAll('.todo-check');
@@ -37,6 +49,8 @@ let checkedItems = () => {
             todoArray.splice(id - 1, 1);
             let parent = e.target.parentNode;
             parent.parentNode.remove();
+            updateIndex();
+
         });
     });
 }
