@@ -4,7 +4,9 @@ let todoArray = [];
 
 function refreshPage() {
     output.innerHTML = '';
-    todoArray.forEach(todo => {
+    todoArray.forEach((todo, index) => {
+        console.log(todo)
+        todo.id = index + 1 ;
         output.innerHTML += `
             <div class="todo" id="todo${todo.id}">
                 <div class="todo-top">
@@ -21,7 +23,6 @@ function refreshPage() {
 
 };
 
-window.onload = refreshPage();
 
 let buttonAdd = document.querySelector('#button-add');
 
@@ -29,14 +30,15 @@ let buttonAdd = document.querySelector('#button-add');
 
 let checkedItems = () => {
     let checkBoxes = document.querySelectorAll('.todo-check');
-    console.table(checkBoxes)
-
     checkBoxes.forEach(checkBox => {
         checkBox.addEventListener('click', (e) => {
+            let id = e.target.id.split('-')[1];
+            console.log(id);
+            todoArray.splice(id - 1, 1);
             let parent = e.target.parentNode;
             parent.parentNode.remove();
         });
-    })
+    });
 }
 
 checkedItems();
@@ -56,6 +58,5 @@ buttonAdd.addEventListener('click', () => {
     todoArray.push(newItem);
     refreshPage();
     checkedItems();
-    console.table(todoArray);
 
 });
