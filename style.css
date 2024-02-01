@@ -113,7 +113,7 @@ img {
 }
 
 .form-input-text {
-    text-align: center;
+    text-align: start;
     width: 300px;
     height: 30px;
     border: none;
