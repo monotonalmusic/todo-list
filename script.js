@@ -3,7 +3,7 @@ async function fetchTodos() {
     const data = await response.json();
     return data;
 
-}
+};
 
 let todoArray = await fetchTodos();
 
@@ -21,15 +21,16 @@ let todoTemplate = (todo) =>
 `;
 
 const output = document.querySelector('.output');
-    function updateIndex() {
-            output.innerHTML = '';
-            todoArray.forEach((todo, index) => {
-                todo.id = index + 1;
-                output.innerHTML += todoTemplate(todo);
-            });
-        checkedItems();
-    };
-    
+
+function updateIndex() {
+        output.innerHTML = '';
+        todoArray.forEach((todo, index) => {
+            todo.id = index + 1;
+            output.innerHTML += todoTemplate(todo);
+        });
+    checkedItems();
+};
+
 function checkedItems () {
     let checkBoxes = document.querySelectorAll('.todo-check');
     checkBoxes.forEach(checkBox => {
