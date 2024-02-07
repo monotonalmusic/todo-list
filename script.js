@@ -1,7 +1,12 @@
 async function fetchTodos() {
-    const response = await fetch('/todo.json');
-    const data = await response.json();
-    return data;
+    try {
+        const response = await fetch('/todo.json');
+        const data = await response.json();
+        return data;
+
+    } catch (error) {
+        console.error('Error:', error);
+    }
 
 };
 
